@@ -19,7 +19,7 @@ public class BusquedaCancionStepDefinitions {
 
     @Given("que se ingresa en la pagina principal de youtube")
     public void queSeIngresaEnLaPaginaPrincipalDeYoutube() {
-        OnStage.theActorInTheSpotlight().attemptsTo(
+        OnStage.theActorInTheSpotlight().wasAbleTo(
                 OpenUrlTask.then(environmentVariables.getProperty("pages.youtube"))
         );
     }
