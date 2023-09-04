@@ -19,7 +19,7 @@ targetCompatibility = 1.8
 
 ext {
     slf4jVersion = '1.7.7'
-    serenityCoreVersion = '3.5.1'
+    serenityCoreVersion = '3.9.8'
     junitVersion = '5.8.2'
     assertJVersion = '3.22.0'
     logbackVersion = '1.2.10'
@@ -38,6 +38,9 @@ dependencies {
             "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}",
             group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.7',
             "ch.qos.logback:logback-classic:${logbackVersion}"
+
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.11.0'
+
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
             "org.junit.vintage:junit-vintage-engine:${junitVersion}"
