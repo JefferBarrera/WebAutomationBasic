@@ -1,5 +1,5 @@
 plugins {
-    id "net.serenity-bdd.serenity-gradle-plugin" version "3.6.7"
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.9.8"
     id 'java'
     id 'eclipse'
     id 'idea'
@@ -14,14 +14,14 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
 
 ext {
-    slf4jVersion = '1.7.7'
     serenityCoreVersion = '3.9.8'
     junitVersion = '5.8.2'
     assertJVersion = '3.22.0'
+    slf4jVersion = '2.0.7'
     logbackVersion = '1.2.10'
 }
 
@@ -31,22 +31,19 @@ dependencies {
             "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
-            "org.assertj:assertj-core:${assertJVersion}",
-            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}",
-            group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.7',
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            group: 'org.slf4j', name: 'slf4j-simple', version: slf4jVersion,
             "ch.qos.logback:logback-classic:${logbackVersion}"
 
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.11.0'
-
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.12.0'
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
             "org.junit.vintage:junit-vintage-engine:${junitVersion}"
 
-    testCompileOnly "junit:junit:4.12"
-
+    testCompileOnly 'junit:junit:4.13.1'
 }
 
 test {
